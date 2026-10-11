@@ -1,0 +1,1 @@
+Experimental results for leakage-free and leaky models across 10%, 20%, 30%, and 40% course-progress cutoffs. This directory contains model performance comparisons, calibration metrics, class-specific evaluation results, confusion matrices, and sensitivity analyses.
