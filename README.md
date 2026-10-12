@@ -161,3 +161,27 @@ The OULAD dataset is available through its original public source. The original 
 No reuse license is declared here. Repository contents remain subject to applicable copyright and the original dataset's terms of use.
 
 Document reviewer sensitivity analyses.
+
+## Fixed-Cohort Sensitivity Analysis
+
+To assess whether changes in evaluation-cohort composition influenced the observed temporal leakage effects, an additional fixed-cohort analysis was conducted using the same 5,026 held-out student–module registrations, representing 4,626 unique students, at all four course-progress cutoffs (10%, 20%, 30%, and 40%).
+
+Previously fitted Logistic Regression and XGBoost models were evaluated under leakage-free and deliberately leaky conditions. Performance was compared using accuracy, balanced accuracy, macro-F1, and normalized Fail–Withdrawn confusion.
+
+The leakage-associated accuracy differences remained positive across all four cutoffs:
+
+| Course cutoff | XGBoost gain (pp) | Logistic Regression gain (pp) |
+|---|---:|---:|
+| 10% | 14.66 | 11.26 |
+| 20% | 12.06 | 9.69 |
+| 30% | 10.01 | 7.86 |
+| 40% | 7.96 | 6.71 |
+
+These findings indicate that the observed leakage-associated performance differences were not explained solely by changes in the evaluation cohort across prediction cutoffs.
+
+### Result Files
+
+- `reviewer_fixed_cohort_full_results.csv` — Performance metrics for both algorithms and leakage conditions at all four cutoffs.
+- `reviewer_fixed_cohort_differences.csv` — Paired performance differences in percentage points.
+
+The registration-level cohort-key file is not included in this public repository to avoid redistributing student identifiers.
