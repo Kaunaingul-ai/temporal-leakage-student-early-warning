@@ -18,7 +18,7 @@ This repository release provides **source code**, not an independently validated
 - The files here have passed JSON parsing and Python syntax compilation where applicable, **not** a fresh end-to-end execution with OULAD.
 - The 05 and 06 reviewer notebooks should be audited separately for secrets, output disclosure, and dependencies.
 
-- ## Reviewer Sensitivity Analyses
+ ## Reviewer Sensitivity Analyses
 
 Notebook `08_Reviewer_Sensitivity_Analyses.ipynb` contains the additional experiments supporting the revised manuscript.
 
