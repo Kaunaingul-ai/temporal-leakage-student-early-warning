@@ -45,3 +45,28 @@ The original environment record lists Python 3.12.13, pandas 2.2.2, NumPy 2.0.2,
 The environment inspected during reviewer-sensitivity analysis used Python 3.13.16, pandas 2.2.3, NumPy 2.1.3, scikit-learn 1.6.1, XGBoost 3.4.1, and SHAP 0.52.0.
 
 Reproduction requires configuring input paths, obtaining OULAD under its applicable terms, and executing the required preceding data-preparation and modelling steps. The available notebooks and results have not yet been independently validated through a complete clean-environment reproduction run.
+
+## Portable Reviewer-Sensitivity Notebook
+
+A path-configurable version of the reviewer-sensitivity workflow is available at `notebooks/08_Reviewer_Sensitivity_Analyses_Portable.ipynb`.
+
+The original notebook, `notebooks/08_Reviewer_Sensitivity_Analyses.ipynb`, is retained as the experimental record.
+
+The portable version reads the project root from the `OULAD_PROJECT_DIR` environment variable, falling back to `/content/drive/MyDrive/AI_Research_Paper_1` when the variable is not set.
+
+In Google Colab, mount Google Drive and configure the project root before executing the notebook's analysis cells:
+
+```python
+import os
+from google.colab import drive
+
+drive.mount("/content/drive")
+
+os.environ["OULAD_PROJECT_DIR"] = "/content/drive/MyDrive/AI_Research_Paper_1"
+```
+
+Replace the project-root path with the location of your own project directory. The necessary processed datasets, original student-level split, and model metadata must be available in the expected subdirectories.
+
+The portable notebook was checked against the original notebook. Sixteen project-path assignments were modified, with no other corresponding source-code changes or Python syntax errors detected.
+
+These checks establish code-level consistency, but not complete computational reproducibility. A fresh end-to-end execution in an independently configured environment remains necessary to verify reproduction of the reported results.
